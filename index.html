@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark</title>
+    <title>RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark</title>
 
-    <meta name="description" content="RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark">
+    <meta name="description" content="RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <base href="/"> -->
@@ -20,13 +20,13 @@
     <meta property="og:image:height" content="682">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://anonymous-robovqa.github.io/"/>
-    <meta property="og:title" content="RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark" />
-    <meta property="og:description" content="Anonymous project page for RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark." />
+    <meta property="og:title" content="RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark" />
+    <meta property="og:description" content="Anonymous project page for RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark." />
 
         <!--TWITTER-->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark" />
-    <meta name="twitter:description" content="Anonymous project page for RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark." />
+    <meta name="twitter:title" content="RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark" />
+    <meta name="twitter:description" content="Anonymous project page for RoboVQA: A Multimodal Long-Horizon Planning Robotics Benchmark." />
     <meta name="twitter:image" content="https://rl-at-scale.github.io/img/rls-teaser.jpg" />
 
 
@@ -74,7 +74,7 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <strong><font size="+6">RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark </font></strong> </br> 
+                <strong><font size="+6">RoboVQA: Multimodal Long-Horizon Reasoning for Robotics </font></strong> </br> 
                 <!--<small>
                     CoRL 2023
                 </small>-->
@@ -94,27 +94,30 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                  <p style="text-align:center;">
-            	    <video id="arch" width="100%" playsinline="" autoplay="" muted="" loop="">
-                           <source src="videos/sort_at_rls_1440x810.mp4" type="video/mp4">
-                       </video>
+            	    <video id="bg-video" autoplay loop muted playsinline>
+                        <source src="https://storage.googleapis.com/anon_robovqa/videos/10000025344605353401.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </p>
+
                 <h3>
                     Abstract
                 </h3>
                 <p class="text-justify">
-                   We present RoboPlan, a large-scale multimodal and cross-embodiment dataset and benchmark for long-horizon planning. We use scalable ways for acquiring real-world data and language labels with high throughput and high diversity: crowd-sourcing tasks from users and operators, collecting long continuous episodes, using crowd-sourced labeling and automatically generating tasks from it, using human embodiment data along with robotic embodiment data. We analyze the effects of mixing cross-embodiment data as well as multi-task data and find that it generally increases performance, broadens capabilities and increases collection throughput. Examples in RoboPlan are formatted as video-text pairs, where videos of robot or human actions are annotated with texts of multi-turn visual question answering (VQA), detailing the intermediate thoughts and actions required to achieve the session goals. This dataset covers a total of 300 hours of videos, over 1 million conversations and 100k instructions. We then define a novel benchmark based on this dataset, using an intervention rate metric to assess a robot's level of autonomy in accomplishing predefined goals without human interference. We validate our approach by running several state-of-the-art visual language models (VLM) over the dataset, and demonstrate the feasibility of long-horizon planning in the real-world with low intervention rate. Moreover, we find that video language models in general work better than image language models, indicating the necessity of modeling visual temporal dynamics in long-horizon planning tasks. 
+                   We present RoboVQA, a large-scale multimodal and cross-embodiment dataset and benchmark for long-horizon planning. We use scalable ways for acquiring real-world data and language labels with high throughput and high diversity: crowd-sourcing tasks from users and operators, collecting long continuous episodes, using crowd-sourced labeling and automatically generating tasks from it, using human embodiment data along with robotic embodiment data. We analyze the effects of mixing cross-embodiment data as well as multi-task data and find that it generally increases performance, broadens capabilities and increases collection throughput. Examples in RoboVQA are formatted as video-text pairs, where videos of robot or human actions are annotated with texts of multi-turn visual question answering (VQA), detailing the intermediate thoughts and actions required to achieve the session goals. This dataset covers a total of 300 hours of videos, over 1 million conversations and 100k instructions. We then define a novel benchmark based on this dataset, using an intervention rate metric to assess a robot's level of autonomy in accomplishing predefined goals without human interference. We validate our approach by running several state-of-the-art visual language models (VLM) over the dataset, and demonstrate the feasibility of long-horizon planning in the real-world with low intervention rate. Moreover, we find that video language models in general work better than image language models, indicating the necessity of modeling visual temporal dynamics in long-horizon planning tasks. 
                    Finally, our results corroborate our assumption that models trained on human data can effectively transfer to robot setup, revealing the potential of our approach in facilitating large-scale, cost-effective training for robot planning problems. 
                 </p>
             </div>
         </div> 
 
 
+        
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    RoboPlan Benchmark
+                    RoboVQA Benchmark
                 </h3>
-                    Here we describe the the RoboPlan benchmark. Each episode is decomposed into a sequence of tasks, each consisting of a text question and a video segment. The following eight tasks are defined: 
+                    Here we describe the the RoboVQA benchmark. Each episode is decomposed into a sequence of tasks, each consisting of a text question and a video segment. The following eight tasks are defined: 
                     <br>
                     <ul>
                         <li>
@@ -144,7 +147,7 @@
                     </ul>
                     The first task of an episode is <b>Planning Remaining Steps</b>, asking the robot to formulate a long-horizon plan to execute to accomplish the goal. As the robot executes each step of this plan, it is prompted with multiple tasks to determine <b>Affordance</b> (what actions are possible), <b>Success</b> (which actions have succeeded), and <b>Prediction</b> (which actions need to be done afterwards). 
                     <br><br>
-                    <b>Intervention</b> Since the high-level goal is decomposed into a sequence of tasks, there is a consistent and regularized framework for determining whether or not the robot is proceeding towards the goal correctly. These questions can be viewed as an interactive conversation between a questioning human and an answering robot. In particular, the RoboPlan benchmark allows for human <b>intervention</b> within the robot's trajectory --- for example, if the robot responds incorrectly to a particular task, a human can intervene to overwrite its prediction with the correct answer, allowing it to continue the execution of subsequent tasks. 
+                    <b>Intervention</b> Since the high-level goal is decomposed into a sequence of tasks, there is a consistent and regularized framework for determining whether or not the robot is proceeding towards the goal correctly. These questions can be viewed as an interactive conversation between a questioning human and an answering robot. In particular, the RoboVQA benchmark allows for human <b>intervention</b> within the robot's trajectory --- for example, if the robot responds incorrectly to a particular task, a human can intervene to overwrite its prediction with the correct answer, allowing it to continue the execution of subsequent tasks. 
                     <br><br>
                     <b>Chain-of-Thought in Natural Language</b> Decomposing high-level goals into the defined tasks allows for robots to manifest its thinking process when carrying out long-horizon plans. Moreover, these tasks are provided as natural language questions and answers, and can be viewed as a series of Visual Question Answering (VQA) steps. This formulation is similar to chain-of-thought for language model prompting~\citep{wei2023chainofthought}.  We also note concurrent work~\citep{hu2023thought} which demonstrates that mimicking step-by-step human thought improves %model's action planning accuracy.
             </div>
@@ -155,161 +158,121 @@
                 <h3>
                     Dataset
                 </h3>
-                    As part of the benchmark, we collect and publish the RoboPlan dataset with both training and evaluation splits. As shown in \fig{data_collection}, we first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments. We then record first-person videos executing these tasks in two different embodiments: (1) using a tele-operated robot with a single arm, and (2) with a human using a single arm, and holding a camera in their other hand. After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described in Section~\ref{sec:roboplanbench} are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
-                    <br><br>
+                    <p style="text-align:center;">
+                        <figure>
+                            <img src="img/random_img_frames.png" class="img-responsive">
+                            <figcaption>Fig. N - Random frames from the RoboVQA dataset</figcaption>
+                        </figure>
+                    </p>
+                    As part of the benchmark, we collect and publish the RoboVQA dataset with both training and evaluation splits. We first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments. 
+                    <p style="text-align:center;">
+                        <figure>
+                            <img src="img/3_embodiments.png" class="img-responsive">
+                            <figcaption>Fig. N - 3 embodiments in the RoboVQA dataset</figcaption>
+                        </figure>
+                    </p>
+                    We then record first-person videos executing these tasks in 3 different embodiments: (1) using a tele-operated robot with a single arm, (2) with a human using a single arm, and holding a camera in their other hand, and (3) with a human using a thong, while recording videos similarly to (2). After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
+                    <br>
+                    <br>
                     <b>Task length</b> We focus on tasks that require long-horizon planning. Therefore the collected long-horizon episodes last on average 1 minute and 42 seconds. The medium-horizon tasks segments labeled in hindsight last on average 13 seconds.
                     <br><br>
                     <b>Task diversity</b> To ensure that our dataset and benchmark do not overfit to a specific environment, domain or task, we collect examples over a wide range of tasks from a robotics perspective. Unlike existing robotics works~\citep{saycan2022arxiv} where a fixed and small list of tasks is decided in advance by researchers and engineers in a top-down fashion, we opt for a bottom-up approach where a large number of tasks are crowd-sourced by users and tele-operators. This favors breadth and a better alignment with a distribution of requests coming from real users. The sessions were across 3 office buildings, covering 1,939 unique long-horizon tasks and 29,367 unique medium-horizon tasks.
                     <br><br>
-                    <b>Dataset Statistics</b> The dataset contains 312.6 hours of videos or 13 days, collected across 3 office buildings. These videos correspond to 2859 robot embodiment episodes and 2672 human embodiment episodes. There is a total of 5531 long horizon instructions with an average execution length of 102 seconds with 1939 unique values among them. The dataset also has 111,046 medium horizon instructions, with an average execution time of 13 seconds with 29,367 unique samples among them. From these instructions, we construct a visual question-answering (VQA) dataset of 1+ million (video, VQA conversation) pairs. Because evaluation of freeform text answers are performed by humans, we keep the validation and test sets small on purpose with approximately 1,000 VQA entries for each (coming from 50 episodes each). While there can be overlap in scenes between training and val/test, there is no overlap in episodes.
+                        <figure>
+                            <img src="img/dataset_stats.png" width="100%" class="img-responsive">
+                            <figcaption>Fig. N - 3 embodiments in the RoboVQA dataset</figcaption>
+                        </figure>
+                    <b>Dataset Statistics</b> Detailed statistics for the dataset is illustrated in Fig. N
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Dataset
+                    Evaluation Method
                 </h3>
-                    As part of the benchmark, we collect and publish the RoboPlan dataset with both training and evaluation splits. As shown in \fig{data_collection}, we first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments. We then record first-person videos executing these tasks in two different embodiments: (1) using a tele-operated robot with a single arm, and (2) with a human using a single arm, and holding a camera in their other hand. After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described in Section~\ref{sec:roboplanbench} are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
-                    <br><br>
-                    <b>Task length</b> We focus on tasks that require long-horizon planning. Therefore the collected long-horizon episodes last on average 1 minute and 42 seconds. The medium-horizon tasks segments labeled in hindsight last on average 13 seconds.
-                    <br><br>
-                    <b>Task diversity</b> To ensure that our dataset and benchmark do not overfit to a specific environment, domain or task, we collect examples over a wide range of tasks from a robotics perspective. Unlike existing robotics works~\citep{saycan2022arxiv} where a fixed and small list of tasks is decided in advance by researchers and engineers in a top-down fashion, we opt for a bottom-up approach where a large number of tasks are crowd-sourced by users and tele-operators. This favors breadth and a better alignment with a distribution of requests coming from real users. The sessions were across 3 office buildings, covering 1,939 unique long-horizon tasks and 29,367 unique medium-horizon tasks.
-                    <br><br>
-                    <b>Dataset Statistics</b> The dataset contains 312.6 hours of videos or 13 days, collected across 3 office buildings. These videos correspond to 2859 robot embodiment episodes and 2672 human embodiment episodes. There is a total of 5531 long horizon instructions with an average execution length of 102 seconds with 1939 unique values among them. The dataset also has 111,046 medium horizon instructions, with an average execution time of 13 seconds with 29,367 unique samples among them. From these instructions, we construct a visual question-answering (VQA) dataset of 1+ million (video, VQA conversation) pairs. Because evaluation of freeform text answers are performed by humans, we keep the validation and test sets small on purpose with approximately 1,000 VQA entries for each (coming from 50 episodes each). While there can be overlap in scenes between training and val/test, there is no overlap in episodes.
+                    We first evaluate the model performance on individual tasks, where each task consists of a video segment and a question. The inference result is compared using exact match against prior human evaluation results stored in a central database as correct/incorrect for the video-question pair. The inference results for which no match is found are then collected for human raters to evaluate. During evaluation, a human rater is presented with the exact video segment and question as presented to the model. The rater is asked to either mark the model-generated answer as correct or incorrect, in which case the rater can propose a correct answer. All answers are added to the database, with the correctness of each answer marked accordingly.
+
+                    TODO Fig
+
+                    Robot collection throughput will often be a factor of the cost including time, money, tele-operator training and availability, hardware maintenance etc., while humans are already expert of their own embodiment, collecting data with much less cost and cycle than robots. When factoring in all of these parameters into a collection budget, we can see that robot-to-human collection cost ratios and throughputs can vary wildly depending on all of these parameters. It is hence a critical question while scaling up data collection to know which data mixture for a given budget leads to the lowest error rates.
+
+                    We explore this question in Figure~\ref{fig:collection_mixtures} by looking at the data yields for a fixed collection budget of 500,000 VQA conversations, and report the performance for different configurations in Figure~\ref{fig:collection_mixtures}-b to analyze the trade-offs between different mixtures. We find that even if the robot-human ratio is 1.0 and only evaluating on the robot test set, the error rate is comparable when training on the equal robot250k-human250k mixture (62.4\%) compared to the full 500k robot dataset (62.7\%), while also being significantly lower on the human test set (53.9\% vs 67.0\%). Not only there is no downside for the robot performance to mix human data, it also makes the model more general and usable for other applications that require human embodiment understanding.
+
+                    Similarly we find that when the robot-human cost ratio is 4.0, the performance of the mixed dataset (robot-62k + human-250k) on the robot test set is similar to the robot-only 125k dataset (65.3\% vs 63.5\%) while also being significantly lower on the human test set (51.1\% vs 68.7\%). We also observe that the performance gains seem rather small when training on 500k robot samples vs 125k, and that performance on human data degrades slightly when increasing robot data from 62k to 250k. We conclude that this analysis validates the common intuition that human data collection is an efficient way to scale up data collection for robots, despite the embodiment differences.
+
+                    TODO Fig
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Tasks Transfer via Cross-Embodiment Data
+                </h3>
+
+                    In \fig{vqa5_eval_robot}, we compare error rates on the test split using VideoCoCa-\algname{} trained on robot embodiment only, human embodiment only, and their combination. The test set contains only robot embodiment data. Despite cross-embodiment, we find that errors are below 100\% for all tasks when training on human data only, indicating human data by itself is useful to acquire a grounded understanding of videos with robot embodiment. Furthermore, training on both embodiments performs better than training on robot data only, indicating that extra data with human embodiment does not hurt performance when evaluating on the robot embodiment. We use~\citep{saycan2022arxiv} as a baseline, which uses a small, fixed list of 60 tasks and can only be evaluated on the planning task. We also provide the affordance answers from \algname{} as affordance function to SayCan for planning.
+
+                    Similarly, we evaluate on the joint human and robot test split in \ref{appendix:quantitative_results} \fig{vqa5_eval_robot_human}. While it is not surprising that training on both embodiments performs best on the robot+human test set, we also shows it is the most general model as it performs better in all situations.
+                    We also explore in \fig{error_rate_different_tasks} the effect of training on multiple tasks versus training specialized models on reduced sets of tasks. We find that the model trained on all tasks is often better of comparable than the models dedicated to a subset of tasks, with the exception of the success task.
+
+                    TODO Fig
             </div>
         </div>
 
-        \subsection{Evaluation Method}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    End-to-end Long-horizon Inference Evaluation
+                </h3>
 
-We first evaluate the model performance on individual tasks, where each task consists of a video segment and a question. The inference result is compared using exact match against prior human evaluation results stored in a central database as correct/incorrect for the video-question pair. The inference results for which no match is found are then collected for human raters to evaluate. During evaluation, a human rater is presented with the exact video segment and question as presented to the model. The rater is asked to either mark the model-generated answer as correct or incorrect, in which case the rater can propose a correct answer. All answers are added to the database, with the correctness of each answer marked accordingly.
+                In \fig{long_horizon_run_with_intervention_run1}, we present the answers of our model trained on both robot and human embodiment data for a full episode when queried for the immediate next step given a long-horizon instruction. We use the temporal segments provided in hindsight by human annotators on an existing test episode. For each segment, we retrieve a short video right before the segment starts and ask the model what should be done next using the following prompt: "current goal is: [long-horizon instruction] Q: immediate next step? A: ". We then submit each answer for human review and infer the intervention rate given how many steps had incorrect answers. We present more qualitative runs in Section~\ref{appendix:runs}.
 
+                \begin{figure*}[h]
+                  \centering
+                  \includegraphics[width=1\linewidth]{figures/runs/long_horizon_run_with_intervention_run1_2.pdf}  
+                  \caption{\small{\textbf{Full episodes runs with Intervention} given a long-horizon instruction and an existing video. We show the human labels on the left in blue, correct answer green and incorrect in red. For each picture (we show pictures here for simplicity but the model is fed the last few seconds before this picture as input), we give the long-horizon in a prompt and ask what the immediate next step should be. The human evaluator rates each answer and provides correction if needed. We report the rate of intervention at the end of the run.
+                  }}
+                  \label{fig:long_horizon_run_with_intervention_run1}
+                \end{figure*}
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Observations
+                </h3>
+                From the experimental results above, we make the following observations: 
 
-\begin{table}[h]
-\small
-\begin{tabular}{l|l|l|l|l|l}
-\toprule
-Planning Model     & Visual  & \# calls to VLM       & Inference    & Model  & Intervention  \\
-                    & Affordance Function  &  for 30k instr.  & Time$^*$         & Size   & Rate \\
-\midrule
-SayCan             & VideoCoca {\em{(F-t)}}  & 30k                   & \textgreater{}20s per step & 540B & 95.8\%\\
-Grounded Decoding  & VideoCoca {\em{(F-t)}}  & 10  &  $\dagger$ & 540B & 97.6\%\\
-PaLM-E {\em{(Zero-Shot)}} & --         & 1 & $\sim$30s & 562B  & 57.9\%\\
-\midrule
-VideoCoca {\em{(Fine-tuned)}}           & --         & 1 & $\sim$1s & 383M   &  28.8\%\\
-\bottomrule
-\end{tabular}
-\vspace{4mm}
-\caption{Comparison of baseline methods for the \algname{} benchmark tasks. $\dagger$ Grounded decoding inference time depends on beam size. $^*$ Inference time depends on inference compute -- we note the models as used.}
-\label{table:results-baselines}
-\end{table}
+                \textbf{Feasibility of low-intervention rate} The intervention rate depends critically on the performance of VLMs. Using a strong VLM, it is possible for the robot to do long-horizon planning with relatively low intervention rate. This indicates that the contemporary multimodal models are strong enough to help robots understand visual scenes and reason over the action steps in controlled environments, and it is critical to build stronger VLMs to achieve higher levels of robotic autonomy.
 
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=1\linewidth]{figures/vqa22/planning_evals.pdf}  
-\caption{Comparison of baseline methods for the \algname{} benchmark tasks. $\dagger$ Grounded decoding inference time depends on beam size. $^*$ Inference time depends on inference compute -- we note the models as used.}
-  }}
-  \label{fig:embodiments}
-\end{figure*}
+                \textbf{Importance of multi-task training} Multitask training has been demonstrated to be effective in facilitating transfer learning, improving models' generalization ability and versatility~\citep{}. Similar observations hold in our experiments. We find in \fig{error_rate_different_tasks} that the model trained on all tasks is often better of comparable than the models dedicated to a subset of tasks, with the exception of the success task. However the performance difference is small, and a robotics setup benefits more largely from broad and general answering capabilities.
 
+                \textbf{Importance of video modeling}
+                In order to perform tasks accurately, visual grounding over time horizon is important. We verify this assumption by comparing VideoCoCa trained with different number of frames (1, 2, 4, 8, 16). The results are presented in Table~\ref{fig:error_rate_different_frames} in Appendix~\ref{appendix:compare_num_frames}. As expected, modeling with more frames yields better results, as it captures longer temporal dynamics for more accurate visual grounding.
+            </div>
+        </div>
 
-\subsection{Comparing Embodiment Mixtures} \label{sec:expemb}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Limitations
+                </h3>
 
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=1\linewidth]{figures/embodiments2.pdf}  
-  \caption{\small{Examples of 3 embodiments in the dataset: robot, human (single) arm, human using a grasping tool.
-  }}
-  \label{fig:embodiments}
-\end{figure*}
+                While we successfully collected a larger number of video-text examples over a wide range of tasks, our approach is limited in the following ways. First, all tasks were accomplished in unimanual manner. To further expand the variety of tasks, we will consider introducing bimanual operations in future work. Secondly, the ways robots and humans perform tasks may differ, potentially impeding transfer learning between human and robot data. Thirdly, human intervention and oversight of robot task execution is time consuming, making this evaluation procedure difficult to be deployed at large scale. Lastly, we have not compared the effectiveness of the proposed human-and-robot dataset/benchmark with human-only dataset/benchmarks like Ego4D~\citep{grauman2022ego4d}, EpicKitchens~\citep{Damen2018EPICKITCHENS} etc., which merit careful study in our future work.
 
+                We also acknowledge that in this work, we did not conduct  evaluations on a combined planning and mobile-manipulation setting. Rather, we opted to focus on high-level planning only. This is well motivated as decoupling planning and manipulation allows us to study the full breadth of possible tasks. We will explore combining high level with low-level policies in future works.
+            </div>
+        </div>
 
-% While ideally data collection for robot or human embodiment should yield similar throughputs, in the real world collection for robot embodiment is often slower and more restricted than human. Robot collection throughput will often be a factor of time, money, tele-operator training and availability, robot battery life, robot motor speeds, operation logistics, software reliability, locations the robots can collect at, etc. Humans on the other hand are already expert of their own embodiment, are fast, are not subject to software reliability issues, are very mobile in the world, already distributed in all locations. When factoring in all of these parameters into a collection budget, we can see that robot-to-human collection cost ratios and throughputs can vary wildly depending on all of these parameters. It is hence a critical question while scaling up data collection to know which data mixture for a given budget leads to the lowest error rates. We explore this question in Figure~\ref{fig:collection_mixtures} by looking at the data yields for a fixed collection budget of 500,000 VQA conversations. We compare the theoretical total number of collected samples in the case of different robot to human collection cost ratios of 1x, 2x, 4x, and 8x, however it is likely that in many situations the ratio can be a lot bigger. We then report the performance for different configurations in Figure~\ref{fig:collection_mixtures}-b to analyze the trade-offs between different mixtures. We find that even if the robot-human ratio is 1.0 and only evaluating on the robot test set, the error rate is comparable when training on the equal robot250k-human250k mixture (62.4\%) compared to the full 500k robot dataset (62.7\%), while also being a lot lower on the human test set (53.9\% vs 67.0\%). Not only there is no downside for the robot performance to mix human data, it also makes the model more general and usable for other applications that require human embodiment understanding. Similarly we find that when the robot-human cost ratio is 4.0, the performance of the mixed dataset (robot-62k + human-250k) on the robot test set is similar to the robot-only 125k dataset (65.3\% vs 63.5\%) while also being a lot lower on the human test set (51.1\% vs 68.7\%). We note that the robot performance is slightly worse when training only on 62k vs 125k robot samples, further analysis will be needed to explore if low numbers of robot samples degrade performance too much on robot evaluation. We also observe that the performance gains seem rather small when training on 500k robot samples vs 125k, and that performance on human data degrades slightly when increasing robot data from 62k to 250k. Note that this analysis is done only on high-level visual tasks and does not involve physical actions, it could be that the trade-offs are different when evaluating physical actions. Note also that this analysis does not take into account the accessibility and scalability issue for robots, to collect the most diverse data possible it is likely that human collection is vastly cheaper and broader than robot collection and that a large part of useful data can only be practically acquired by humans at this point. Hence we conclude that this analysis validates the common intuition that human data collection is an efficient way to scale up data collection for robots, despite the embodiment differences.
-
-% While ideally data collection for robot or human embodiment should yield similar throughputs, in the real world collection for robot embodiment is often slower and more restricted than human. 
-
-Robot collection throughput will often be a factor of the cost including time, money, tele-operator training and availability, hardware maintenance etc., while humans are already expert of their own embodiment, collecting data with much less cost and cycle than robots. When factoring in all of these parameters into a collection budget, we can see that robot-to-human collection cost ratios and throughputs can vary wildly depending on all of these parameters. It is hence a critical question while scaling up data collection to know which data mixture for a given budget leads to the lowest error rates.
-
-We explore this question in Figure~\ref{fig:collection_mixtures} by looking at the data yields for a fixed collection budget of 500,000 VQA conversations, and report the performance for different configurations in Figure~\ref{fig:collection_mixtures}-b to analyze the trade-offs between different mixtures. We find that even if the robot-human ratio is 1.0 and only evaluating on the robot test set, the error rate is comparable when training on the equal robot250k-human250k mixture (62.4\%) compared to the full 500k robot dataset (62.7\%), while also being significantly lower on the human test set (53.9\% vs 67.0\%). Not only there is no downside for the robot performance to mix human data, it also makes the model more general and usable for other applications that require human embodiment understanding.
-
-Similarly we find that when the robot-human cost ratio is 4.0, the performance of the mixed dataset (robot-62k + human-250k) on the robot test set is similar to the robot-only 125k dataset (65.3\% vs 63.5\%) while also being significantly lower on the human test set (51.1\% vs 68.7\%). We also observe that the performance gains seem rather small when training on 500k robot samples vs 125k, and that performance on human data degrades slightly when increasing robot data from 62k to 250k. We conclude that this analysis validates the common intuition that human data collection is an efficient way to scale up data collection for robots, despite the embodiment differences.
-
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/collection_mixtures_1-8.pdf}  
-  \caption{\small{\textbf{Possible embodiment mixtures for a fixed collection budget.} This graph illustrates the possible trade-offs in total amounts of VQA samples collected for a fixed collecting budget and depending on the collection cost ratios between robot and human embodiments. In (a) we simulate different cost ratios by reducing the dataset size of the robot-embodiment dataset while keeping an equal budget for each embodiment. We calibrate this graph with a reference fixed budget that can produce approximately 500,000 VQA conversations at human collection cost. In (b) we report the error rates of each mixture (average error rate over all tasks). We find that mixing embodiments is overall beneficial even when the collection costs are the same and even when evaluating on the robot embodiment data only.
-  }}
-  \label{fig:collection_mixtures}
-\end{figure*}
-
-
-\subsection{Tasks Transfer via Cross-Embodiment Data}
-
-In \fig{vqa5_eval_robot}, we compare error rates on the test split using VideoCoCa-\algname{} trained on robot embodiment only, human embodiment only, and their combination. The test set contains only robot embodiment data. Despite cross-embodiment, we find that errors are below 100\% for all tasks when training on human data only, indicating human data by itself is useful to acquire a grounded understanding of videos with robot embodiment. Furthermore, training on both embodiments performs better than training on robot data only, indicating that extra data with human embodiment does not hurt performance when evaluating on the robot embodiment. We use~\citep{saycan2022arxiv} as a baseline, which uses a small, fixed list of 60 tasks and can only be evaluated on the planning task. We also provide the affordance answers from \algname{} as affordance function to SayCan for planning.
-
-Similarly, we evaluate on the joint human and robot test split in \ref{appendix:quantitative_results} \fig{vqa5_eval_robot_human}. While it is not surprising that training on both embodiments performs best on the robot+human test set, we also shows it is the most general model as it performs better in all situations.
-We also explore in \fig{error_rate_different_tasks} the effect of training on multiple tasks versus training specialized models on reduced sets of tasks. We find that the model trained on all tasks is often better of comparable than the models dedicated to a subset of tasks, with the exception of the success task.
-
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=1\linewidth]{figures/graphs/vqa5_robot_saycan.pdf}
-  \caption{\small{\textbf{Error rates on robot-only test set}, comparing models trained on robot only, human only or both embodiments. We observed that while it is not trained on robot data, the model trained on human data still performs with less than 100\% error. We also find that the cross-embodiment training is beneficial even when evaluated on robot data only.
-  }}
-  \label{fig:vqa5_eval_robot}
-\end{figure*}
-
-
-
-\subsection{End-to-end Long-horizon Inference Evaluation}
-
-In \fig{long_horizon_run_with_intervention_run1}, we present the answers of our model trained on both robot and human embodiment data for a full episode when queried for the immediate next step given a long-horizon instruction. We use the temporal segments provided in hindsight by human annotators on an existing test episode. For each segment, we retrieve a short video right before the segment starts and ask the model what should be done next using the following prompt: "current goal is: [long-horizon instruction] Q: immediate next step? A: ". We then submit each answer for human review and infer the intervention rate given how many steps had incorrect answers. We present more qualitative runs in Section~\ref{appendix:runs}.
-
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=1\linewidth]{figures/runs/long_horizon_run_with_intervention_run1_2.pdf}  
-  \caption{\small{\textbf{Full episodes runs with Intervention} given a long-horizon instruction and an existing video. We show the human labels on the left in blue, correct answer green and incorrect in red. For each picture (we show pictures here for simplicity but the model is fed the last few seconds before this picture as input), we give the long-horizon in a prompt and ask what the immediate next step should be. The human evaluator rates each answer and provides correction if needed. We report the rate of intervention at the end of the run.
-  }}
-  \label{fig:long_horizon_run_with_intervention_run1}
-\end{figure*}
-
-\subsection{Observations}
-\vspace{-.1in}
-From the experimental results above, we make the following observations: 
-
-\textbf{Feasibility of low-intervention rate} The intervention rate depends critically on the performance of VLMs. Using a strong VLM, it is possible for the robot to do long-horizon planning with relatively low intervention rate. This indicates that the contemporary multimodal models are strong enough to help robots understand visual scenes and reason over the action steps in controlled environments, and it is critical to build stronger VLMs to achieve higher levels of robotic autonomy.
-
-\textbf{Importance of multi-task training} Multitask training has been demonstrated to be effective in facilitating transfer learning, improving models' generalization ability and versatility~\citep{}. Similar observations hold in our experiments. We find in \fig{error_rate_different_tasks} that the model trained on all tasks is often better of comparable than the models dedicated to a subset of tasks, with the exception of the success task. However the performance difference is small, and a robotics setup benefits more largely from broad and general answering capabilities.
-
-\textbf{Importance of video modeling}
-In order to perform tasks accurately, visual grounding over time horizon is important. We verify this assumption by comparing VideoCoCa trained with different number of frames (1, 2, 4, 8, 16). The results are presented in Table~\ref{fig:error_rate_different_frames} in Appendix~\ref{appendix:compare_num_frames}. As expected, modeling with more frames yields better results, as it captures longer temporal dynamics for more accurate visual grounding.
-
-\section{Related Work}
-\vspace{-.1in}
-
-\noindent\textbf{Vision-Language Models.} Recently many methods~\citep{radford2021learning,jia2021scaling,li2022blip,yu2022coca,wang2022simvlm,gupta2022towards,chen2023pali} have been proposed that aim to train vision-language models (VLMs) on large-scale image-text pair datasets. We find the features learned by these methods generalize to robotic datasets. In this work, we also fine-tune a pre-trained vision language model called VideoCoCa~\citep{yan2023videococa} on conversation data grounded in long-horizon videos. The advantage of this VLM is that it is the encoder can consume full videos which helps in fine-grained temporal reasoning required to solve the tasks introduced in the \algname{} benchmark.
-
-\noindent\textbf{Video Captioning.} Our task is closely related to the task of video captioning~\citep{wang2018video,gao2017video,pan2017video,luo2020univl, lin2022swinbert} which is a well studied problem in computer vision. In fact, we fine-tune a pre-trained video-captioning model VideoCoCa on these long-horizon videos. Different from the video captioning problem, all the videos in our fine-tuning dataset are egocentric. Also, we collect segment labels for a long-horizon task executed by either a robot or human. Furthermore, we augment these segments with a variety of question-answer pairs that add more supervision to the model so that an agent can execute long-horizon tasks. 
-
-\noindent\textbf{Video Datasets with Text Annotations.} Recently many large-scale video datasets have been introduced~\citep{damen2018scaling,sigurdsson2018charades,lei2018tvqa,yu2019activityqa,miech19howto100m,yang2021justask,xiao2021next,grauman2022ego4d} that include videos of humans performing tasks with text narrations or question-answer annotations. Ego4D is the most similar dataset to the \algname{} dataset because Ego4D also has egocentric view of daily human activities annotated with dense narrations. However, our dataset differs in two key aspects. First, we collect human and robot interactions in the same environment. Second, our focus is on tasks that a robot is capable of doing. We hope that by lowering the domain gap between the human and robot videos we can achieve more transfer from human videos (which are faster to collect) to robot videos. Like \algname{}, TEACh\citep{teach} is another dataset that also contains interactive dialogues required to solve household tasks. However, TEACh consists of data in simulated environments while our dataset is collected in real kitchen and office environments with both humans and robots.
-
-\noindent\textbf{Language Models for Planning.} \citep{huang2022lang} used a large language model (LLM) to produce plans for robotic tasks. This has been followed up by many works that also use LLMs to produce feasible next steps for a robot~\citep{saycan2022arxiv,driess2023palme,song2022llm,silver2022pddl,liu2023llm+}. One advantage of using LLMs to plan is that the output of these models can be used as input to language-conditioned policies~\citep{jang2021bc,rt12022arxiv,lynch2022interactive} that may have been trained independently.
-
-\noindent\textbf{Intervention Rate.} Intervention Rate is a commonly used evaluation metric~\citep{steinfeld2006common,murphy2013survey,riedelbauch2023benchmarking} in robotics and self-driving car literature for measuring the performance of policies. In this work, we use it as a metric for evaluating video question answering performance when a model is deployed in unseen test environments. Since, robots encounter new scenes and objects as they explore new scenes, we find intervention metric to be a better indicator of the capabilities of the model rather than a metric calculated on an offline dataset.
-
-\noindent\textbf{Chain of Thought Prompting.} \citep{ling-etal-2017-program,cobbe2021training,wei2023chainofthought} use the idea of prompting a language model with the process or steps to perform a reasoning task. The authors observe that prompting allows the model to improve performance on symbolic reasoning tasks like algebraic problems. Inspired by those results, we also provide rationale or thought supervision to the model by providing the sub-tasks as hindsight labels for successfully achieving the long-horizon task. 
-
-\section{Limitations} \label{sec:limitation}
-\vspace{-.1in}
-
-While we successfully collected a larger number of video-text examples over a wide range of tasks, our approach is limited in the following ways. First, all tasks were accomplished in unimanual manner. To further expand the variety of tasks, we will consider introducing bimanual operations in future work. Secondly, the ways robots and humans perform tasks may differ, potentially impeding transfer learning between human and robot data. Thirdly, human intervention and oversight of robot task execution is time consuming, making this evaluation procedure difficult to be deployed at large scale. Lastly, we have not compared the effectiveness of the proposed human-and-robot dataset/benchmark with human-only dataset/benchmarks like Ego4D~\citep{grauman2022ego4d}, EpicKitchens~\citep{Damen2018EPICKITCHENS} etc., which merit careful study in our future work.
-
-We also acknowledge that in this work, we did not conduct  evaluations on a combined planning and mobile-manipulation setting. Rather, we opted to focus on high-level planning only. This is well motivated as decoupling planning and manipulation allows us to study the full breadth of possible tasks. We will explore combining high level with low-level policies in future works.
-
-\section{Conclusion} \label{sec:conclusion}
-\vspace{-.1in}
-In conclusion, we hope that this dataset will serve as a benchmark for the robotics community working on solving grounded multimodal reasoning in complex real world settings. We also hope that cross embodiment transfer from human and robot data will usher in a greater possibility of accelerating robot learning by use of larger human task execution datasets. We show that video sequence models and multi task training improve planning performance over comparable methods. 
-
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Conclusion
+                </h3>
+                In conclusion, we hope that this dataset will serve as a benchmark for the robotics community working on solving grounded multimodal reasoning in complex real world settings. We also hope that cross embodiment transfer from human and robot data will usher in a greater possibility of accelerating robot learning by use of larger human task execution datasets. We show that video sequence models and multi task training improve planning performance over comparable methods. 
+            </div>
+        </div>
 
          <div class="row">
             <div class="col-md-8 col-md-offset-2">

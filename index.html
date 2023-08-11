@@ -153,6 +153,7 @@
 
 		    <p class="text-justify">
 			    In the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">table</a> below we report 3 long-horizon planning evaluations where a model has to predict the next task to perform at multiple turns given a long-horizon instruction and the last few seconds of video.
+			    The metric used here is human intervention rate, which we decompose into "cognitive" (high-level reasoning) and "physical" for actual control. This allows us to evaluate the full breadth of the cognitive model which is much broader than what our low-level policy can achieve.
 		    </p><p class="text-justify">			
 			    Evaluation #1 evaluates models on 100 existing long-horizon episodes (854 planning steps to predict in total) in a broad domain (various tasks across 3 office buildings). This evaluation considers all 3 embodiments contained in the dataset (robot, human, human with tool).
 			    Evaluations #2 and #3 however only consider the robot embodiment.
@@ -266,7 +267,8 @@
                     Videos
                 </h3>
 		<p class="text-justify">
-		We show below some representative long-horizon planning runs by the RoboVQA-VideoCoCa model ranging from 0% cognitive intervention to 100% cognitive intervention. Note that the model is ran on existing pre-recorded videos, hence some actions are labeled as valid but some other action may be consequently executed in the video instead.
+		We present below some representative long-horizon planning runs by the RoboVQA-VideoCoCa model, ranked by increasing cognitive intervention rate from 0% to 100%. 
+		Note that the model is ran on existing pre-recorded videos (with human teleoperation, in other words 100% physical intervention rate), hence some actions are labeled as valid but some other action may be consequently executed in the video instead.
 		</p><p class="text-justify">
 		These videos are from the experiment #1 evaluation on the validation set in the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">results table<a></a>.
 		</p><p class="text-justify">

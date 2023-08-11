@@ -167,7 +167,7 @@
                     </p>
 
 
-                <h3>
+<!--                 <h3>
                     VQA Tasks
                 </h3>
 		    
@@ -206,14 +206,14 @@
                     <b>Chain-of-Thought in Natural Language</b> Decomposing high-level goals into the defined tasks allows for robots to manifest its thinking process when carrying out long-horizon plans. Moreover, these tasks are provided as natural language questions and answers, and can be viewed as a series of Visual Question Answering (VQA) steps. This formulation is similar to chain-of-thought for language model prompting~\citep{wei2023chainofthought}.  We also note concurrent work~\citep{hu2023thought} which demonstrates that mimicking step-by-step human thought improves %model's action planning accuracy.
             </div>
         </div>
-
+ -->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Dataset
                 </h3>
-		    <p>We publicly release the RoboVQA dataset <a href="https://console.cloud.google.com/storage/browser/anon_robovqa">here</a>.
-			It consists of 238h (10 days) of (video, text) pairs coming from recordings of long-horizon instructions being performed by 3 different embodiments (robot, human, human with tool) in a same environment (3 corporate buildings).
+		    <p class="text-justify">We publicly release the RoboVQA dataset <a href="https://console.cloud.google.com/storage/browser/anon_robovqa">here</a>.
+			It consists of 238h (10 days) of (video, text) pairs coming from recordings of long-horizon instructions being performed by <a href="https://anonymous-robovqa.github.io/img/3_embodiments.png">3 different embodiments</a> (robot, human, human with tool) in a same environment (3 corporate buildings).
 			See <a href="https://anonymous-robovqa.github.io/img/dataset_stats.png">statistics</a> for more details.
 		    </p>
                     <p style="text-align:center;">
@@ -224,7 +224,7 @@
 				</figure>
 			</a>
                     </p>
-                    As part of the benchmark, we collect and publish the RoboVQA dataset with both training and evaluation splits. We first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments. 
+<!--                     As part of the benchmark, we collect and publish the RoboVQA dataset with both training and evaluation splits. We first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments.  -->
                     <p style="text-align:center;">
                         <figure>
 			    <a href="https://anonymous-robovqa.github.io/img/3_embodiments.png">
@@ -233,20 +233,20 @@
 			    </a>
                         </figure>
                     </p>
-                    We then record first-person videos executing these tasks in 3 different embodiments: (1) using a tele-operated robot with a single arm, (2) with a human using a single arm, and holding a camera in their other hand, and (3) with a human using a thong, while recording videos similarly to (2). After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
+<!--                     We then record first-person videos executing these tasks in 3 different embodiments: (1) using a tele-operated robot with a single arm, (2) with a human using a single arm, and holding a camera in their other hand, and (3) with a human using a thong, while recording videos similarly to (2). After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
                     <br>
                     <br>
                     <b>Task length</b> We focus on tasks that require long-horizon planning. Therefore the collected long-horizon episodes last on average 1 minute and 42 seconds. The medium-horizon tasks segments labeled in hindsight last on average 13 seconds.
                     <br><br>
                     <b>Task diversity</b> To ensure that our dataset and benchmark do not overfit to a specific environment, domain or task, we collect examples over a wide range of tasks from a robotics perspective. Unlike existing robotics works~\citep{saycan2022arxiv} where a fixed and small list of tasks is decided in advance by researchers and engineers in a top-down fashion, we opt for a bottom-up approach where a large number of tasks are crowd-sourced by users and tele-operators. This favors breadth and a better alignment with a distribution of requests coming from real users. The sessions were across 3 office buildings, covering 1,939 unique long-horizon tasks and 29,367 unique medium-horizon tasks.
-                    <br><br>
+                    <br><br> -->
                         <figure>
 			    <a href="https://anonymous-robovqa.github.io/img/dataset_stats.png">
 	                            <img src="img/dataset_stats.png" width="70%" class="img-responsive">
 	                            <figcaption>Fig. N - General statistics of the RoboVQA dataset</figcaption>
 			    </a>
                         </figure>
-                    <b>Dataset Statistics</b> Detailed statistics for the dataset is illustrated in Fig. N
+<!--                     <b>Dataset Statistics</b> Detailed statistics for the dataset is illustrated in Fig. N -->
             </div>
         </div>
 
@@ -255,11 +255,11 @@
                 <h3>
                     Videos
                 </h3>
-		<p>
+		<p class="text-justify">
 		We show below some representative long-horizon planning runs by the RoboVQA-VideoCoCa model ranging from 0% cognitive intervention to 100% cognitive intervention. Note that the model is ran on existing pre-recorded videos, hence some actions are labeled as valid but some other action may be consequently executed in the video instead.
-		</p><p>
+		</p><p class="text-justify">
 		These videos are from the experiment #1 evaluation on the validation set in the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">results table<a></a>.
-		</p><p>
+		</p><p class="text-justify">
 		Note that some of the easier tasks are repetitive and simple and usually lead to low intervention scores (see first video). Note also that the intervention labeling is not perfect and some interventions can be incorrect (see last video).
 		</p>
                  <p style="text-align:center;">

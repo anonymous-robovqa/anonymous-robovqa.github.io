@@ -115,6 +115,7 @@
                 </div>
         </div>
 
+	<h3>Main Qualitative Results</h3>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                  <p style="text-align:center;">
@@ -124,14 +125,14 @@
                     </video>
                 </p>
 
-                <h3>
+<!--                 <h3>
                     Abstract
                 </h3>
                 <p class="text-justify">
                    We present RoboVQA, a large-scale multimodal and cross-embodiment dataset and benchmark for long-horizon planning. We use scalable ways for acquiring real-world data and language labels with high throughput and high diversity: crowd-sourcing tasks from users and operators, collecting long continuous episodes, using crowd-sourced labeling and automatically generating tasks from it, using human embodiment data along with robotic embodiment data. We analyze the effects of mixing cross-embodiment data as well as multi-task data and find that it generally increases performance, broadens capabilities and increases collection throughput. Examples in RoboVQA are formatted as video-text pairs, where videos of robot or human actions are annotated with texts of multi-turn visual question answering (VQA), detailing the intermediate thoughts and actions required to achieve the session goals. This dataset covers a total of 300 hours of videos, over 1 million conversations and 100k instructions. We then define a novel benchmark based on this dataset, using an intervention rate metric to assess a robot's level of autonomy in accomplishing predefined goals without human interference. We validate our approach by running several state-of-the-art visual language models (VLM) over the dataset, and demonstrate the feasibility of long-horizon planning in the real-world with low intervention rate. Moreover, we find that video language models in general work better than image language models, indicating the necessity of modeling visual temporal dynamics in long-horizon planning tasks. 
                    Finally, our results corroborate our assumption that models trained on human data can effectively transfer to robot setup, revealing the potential of our approach in facilitating large-scale, cost-effective training for robot planning problems. 
                 </p>
-            </div>
+            </div> -->
         </div> 
 
 
@@ -139,7 +140,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Main Results
+                    Main Quantitative Results
                 </h3>
 
 		    <p class="text-justify">
@@ -204,9 +205,10 @@
                     <b>Intervention</b> Since the high-level goal is decomposed into a sequence of tasks, there is a consistent and regularized framework for determining whether or not the robot is proceeding towards the goal correctly. These questions can be viewed as an interactive conversation between a questioning human and an answering robot. In particular, the RoboVQA benchmark allows for human <b>intervention</b> within the robot's trajectory --- for example, if the robot responds incorrectly to a particular task, a human can intervene to overwrite its prediction with the correct answer, allowing it to continue the execution of subsequent tasks. 
                     <br><br>
                     <b>Chain-of-Thought in Natural Language</b> Decomposing high-level goals into the defined tasks allows for robots to manifest its thinking process when carrying out long-horizon plans. Moreover, these tasks are provided as natural language questions and answers, and can be viewed as a series of Visual Question Answering (VQA) steps. This formulation is similar to chain-of-thought for language model prompting~\citep{wei2023chainofthought}.  We also note concurrent work~\citep{hu2023thought} which demonstrates that mimicking step-by-step human thought improves %model's action planning accuracy.
+ -->
+		    
             </div>
         </div>
- -->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>

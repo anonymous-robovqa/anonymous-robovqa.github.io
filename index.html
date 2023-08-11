@@ -143,10 +143,12 @@
                 </h3>
 
                     <p style="text-align:center;">
-                        <figure>
-                            <img src="img/robovqa_bench_table.png" class="img-responsive">
-                            <figcaption>Fig. N - Results on multi-turn long-horizon planning tasks, in pre-recorded videos (experiments #1), live settings with human teleoperation as policy (experiments #2) or fully autonomous (experiments #3).</figcaption>
-                        </figure>
+			<a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">
+	                        <figure>
+	                            <img src="img/robovqa_bench_table.png" class="img-responsive">
+	                            <figcaption>Fig. N - Results on multi-turn long-horizon planning tasks, in pre-recorded videos (experiments #1), live settings with human teleoperation as policy (experiments #2) or fully autonomous (experiments #3).</figcaption>
+	                        </figure>
+			</a>
                     </p>
 		    
 		    Here we describe the the RoboVQA benchmark. Each episode is decomposed into a sequence of tasks, each consisting of a text question and a video segment. The following eight tasks are defined: 
@@ -191,7 +193,7 @@
                     Dataset
                 </h3>
                     <p style="text-align:center;">
-			<a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">
+			<a href="https://anonymous-robovqa.github.io/img/random_img_frames.png">
 				<figure>
 				    <img src="img/random_img_frames.png" class="img-responsive">
 				    <figcaption>Fig. N - Random frames from the RoboVQA dataset</figcaption>
@@ -225,9 +227,15 @@
                 <h3>
                     Videos
                 </h3>
-
+		We show below some representative long-horizon planning runs by the RoboVQA-VideoCoCa model ranging from 0% cognitive intervention to 100% cognitive intervention. Note that the model is ran on existing pre-recorded videos, hence some actions are labeled as valid but some other action may be consequently executed in the video instead.
                  <p style="text-align:center;">
-            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 60%;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_50.0_ff0496c17d900256456b.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
                         <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_100.0_c2e3b99b9ce92c7a246f.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>

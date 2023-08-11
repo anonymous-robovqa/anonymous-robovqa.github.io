@@ -203,8 +203,10 @@
                     As part of the benchmark, we collect and publish the RoboVQA dataset with both training and evaluation splits. We first asked human users to provide a list of common tasks that they would like to see a robot butler perform for them in office or kitchen environments. 
                     <p style="text-align:center;">
                         <figure>
-                            <img src="img/3_embodiments.png" class="img-responsive">
-                            <figcaption>Fig. N - 3 embodiments in the RoboVQA dataset</figcaption>
+			    <a href="https://anonymous-robovqa.github.io/img/3_embodiments.png">
+	                            <img src="img/3_embodiments.png" class="img-responsive">
+	                            <figcaption>Fig. N - 3 embodiments in the RoboVQA dataset</figcaption>
+			    </a>
                         </figure>
                     </p>
                     We then record first-person videos executing these tasks in 3 different embodiments: (1) using a tele-operated robot with a single arm, (2) with a human using a single arm, and holding a camera in their other hand, and (3) with a human using a thong, while recording videos similarly to (2). After videos were collected, we crowdsourced hindsight relabels for video segments, in which workers answered several questions on planning, success, future prediction, etc. From this data, the tasks described are generated automatically with heuristics, for example the future prediction task can be constructed by first extracting the video before a segment, then combining the question "what is likely to happen next?" with the instruction found in the segment. All tasks are constructed using different videos before, during or after a segment.
@@ -215,8 +217,10 @@
                     <b>Task diversity</b> To ensure that our dataset and benchmark do not overfit to a specific environment, domain or task, we collect examples over a wide range of tasks from a robotics perspective. Unlike existing robotics works~\citep{saycan2022arxiv} where a fixed and small list of tasks is decided in advance by researchers and engineers in a top-down fashion, we opt for a bottom-up approach where a large number of tasks are crowd-sourced by users and tele-operators. This favors breadth and a better alignment with a distribution of requests coming from real users. The sessions were across 3 office buildings, covering 1,939 unique long-horizon tasks and 29,367 unique medium-horizon tasks.
                     <br><br>
                         <figure>
-                            <img src="img/dataset_stats.png" width="70%" class="img-responsive">
-                            <figcaption>Fig. N - 3 embodiments in the RoboVQA dataset</figcaption>
+			    <a href="https://anonymous-robovqa.github.io/img/dataset_stats.png">
+	                            <img src="img/dataset_stats.png" width="70%" class="img-responsive">
+	                            <figcaption>Fig. N - General statistics of the RoboVQA dataset</figcaption>
+			    </a>
                         </figure>
                     <b>Dataset Statistics</b> Detailed statistics for the dataset is illustrated in Fig. N
             </div>
@@ -228,6 +232,8 @@
                     Videos
                 </h3>
 		We show below some representative long-horizon planning runs by the RoboVQA-VideoCoCa model ranging from 0% cognitive intervention to 100% cognitive intervention. Note that the model is ran on existing pre-recorded videos, hence some actions are labeled as valid but some other action may be consequently executed in the video instead.
+		These videos are from the experiment #1 evaluation on the validation set in the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png">results table<a></a>.
+		<br>
                  <p style="text-align:center;">
             	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
                         <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_50.0_ff0496c17d900256456b.mp4" type="video/mp4">
@@ -236,7 +242,79 @@
                 </p>
                  <p style="text-align:center;">
             	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_55.6_f57066842e71b693a394.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_58.3_279bbeb0256a904758f1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_61.5_fb3e5d7b1492215052c3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_65.0_8d450883479609ce1c3f.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_66.7_bd8033f7c1b7dee69c41.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_66.7_eb453670792b56ab8b7b.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_67.6_686c04bfea1e0ec78112.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_71.4_19c9068ae0302ec6734f.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_72.7_f21812e39aa80e5f2231.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_80.0_5f8675520f2102d35c95.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_85.7_e8083c0d9be4a7c17155_blurred.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
                         <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_100.0_c2e3b99b9ce92c7a246f.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                 <p style="text-align:center;">
+            	    <video id="bg-video" autoplay loop muted playsinline style="display: block; width: 100%;">
+                        <source src="https://anonymous-robovqa.github.io/videos/RoboVQA/rate_100.0_f685f7e762bdafe08558.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </p>

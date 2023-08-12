@@ -1,1 +1,1 @@
-Website for RoboPlan: A Multimodal Long-Horizon Planning Robotics Benchmark
+Website for RoboVQA: Multimodal Long-Horizon Reasoning for Robotics

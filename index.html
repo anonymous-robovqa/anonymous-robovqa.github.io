@@ -170,7 +170,7 @@
                 </h3>
 
 		    <p class="text-justify">
-			    In the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png" target="_blank">table</a> below we report 3 long-horizon planning evaluations where a model has to predict the next task to perform at multiple turns given a long-horizon instruction and the last few seconds of video.
+			    In the <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png" target="_blank">Figure 1</a> below we report 3 long-horizon planning evaluations where a model has to predict the next task to perform at multiple turns given a long-horizon instruction and the last few seconds of video.
 			    The metric used here is human intervention rate, which we decompose into "cognitive" (high-level reasoning) and "physical" for actual control. This allows us to evaluate the full breadth of the cognitive model which is much broader than what our low-level policy can achieve.
 		    </p><p class="text-justify">			
 			    Evaluation #1 evaluates models on 100 existing long-horizon episodes (854 planning steps to predict in total) in a broad domain (various tasks across 3 office buildings). This evaluation considers all 3 embodiments contained in the dataset (robot, human, human with tool).
@@ -190,6 +190,15 @@
 	                        <figure>
 	                            <img src="img/robovqa_bench_table.png" class="img-responsive">
 	                            <figcaption>Fig. 1 - Results on multi-turn long-horizon planning tasks, in pre-recorded videos (experiments #1), live settings with human teleoperation as policy (experiments #2) or fully autonomous (experiments #3).</figcaption>
+	                        </figure>
+			</a>
+                    </p>
+                    <p style="text-align:center;">
+			<a href="https://anonymous-robovqa.github.io/img/intervention10.png" target="_blank">
+	                        <figure>
+	                            <img src="img/robovqa_bench_table.png" class="img-responsive">
+	                            <figcaption>Fig. 2 - 10 long-horizon tasks being evaluated in <a href="https://anonymous-robovqa.github.io/img/robovqa_bench_table.png" target="_blank">Evaluation #2</a> (~60 medium-horizon steps in total). 
+					    These evaluation scenarios were devised after data collection was finished.</figcaption>
 	                        </figure>
 			</a>
                     </p>
